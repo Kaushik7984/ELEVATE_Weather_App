@@ -9,14 +9,12 @@ let Api_key = "1086d436b02ffb0e0a2e4bae6c11d184";
 
 const data = async function (search) {
   let getData = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${Api_key}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${Api_key}&units=metric`
   );
   console.log(getData);
   let jsonData = await getData.json();
   console.log(jsonData);
   console.log(jsonData.name);
-
- 
 
   if (jsonData.cod == 400) {
     alert("Please Enter Location");
@@ -25,10 +23,7 @@ const data = async function (search) {
     city.innerHTML = "";
     temp.innerHTML = "";
     type.innerHTML = "";
-
-    console.log("not work")
   }
-
   if (jsonData.cod == 404) {
     alert("Please Enter valid Location");
     image.src = "error2.png";
@@ -66,10 +61,10 @@ function myFun(event) {
   console.log("working");
   event.preventDefault();
   search = input.value[0].toUpperCase() + input.value.slice(1);
-
   data(search);
 }
 
 form.addEventListener("submit", myFun);
 
-data("Bhavnagar");
+data("bhavnagar");
+
