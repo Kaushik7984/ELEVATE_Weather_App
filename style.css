@@ -28,6 +28,7 @@ body{
     background-color: rgb(191, 235, 250);
     margin-top: 2px;
     margin-inline: 9px;
+    cursor: pointer;
  }
  ::placeholder{
     color: black;
