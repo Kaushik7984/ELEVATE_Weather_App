@@ -11,10 +11,11 @@ const data = async function (search) {
   let getData = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${Api_key}&units=metric`
   );
-  console.log(getData);
+  // console.log(getData);
   let jsonData = await getData.json();
-  console.log(jsonData);
-  console.log(jsonData.name);
+  // console.log(jsonData);
+  // console.log("working")
+  // console.log(jsonData.name);
 
   if (jsonData.cod == 400) {
     alert("Please Enter Location");
@@ -58,7 +59,7 @@ const data = async function (search) {
 };
 
 function myFun(event) {
-  console.log("working");
+  // console.log("working");
   event.preventDefault();
   search = input.value[0].toUpperCase() + input.value.slice(1);
   data(search);
